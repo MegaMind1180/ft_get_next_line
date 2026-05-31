@@ -18,12 +18,12 @@ char	*get_next_line(int fd)
 		{
 			i = ft_strlen(buf) - ft_strlen(leftover);
 			result = ft_substr(buf, 0, i);
-			ft_strjoin(result, leftover);
+			return (result);
 		}
 		else
 		{
 			i = ft_strlen(buf)
-			result = ft_substr(buf, 0, i);
+			result = ft_strjoin(result, buf)
 			
 		}
 	}
