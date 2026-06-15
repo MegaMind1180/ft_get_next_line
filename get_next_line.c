@@ -1,4 +1,5 @@
 #include "get_next_line.h"
+#include <stdlib.h>
 
 static char	*read_until_newline(int fd, char *stash);
 static char	*extract_line(char *stash);
@@ -17,6 +18,8 @@ char	*get_next_line(int fd)
 	if (!stash)
 		return (NULL);
 	line = extract_line(stash);
+	if (!line)
+		return (free(stash), NULL);
 	stash = trim_stash(stash);
 	return (line);
 }
